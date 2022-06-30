@@ -46,3 +46,41 @@ nav a {
 // Specificity includes: inline styles, IDs, Classes,Peudo-classes,attribute, and Elements,pseudo-elements. When a property's declared value is created its precidence is determined by how many points it is earning by having one of each of the stated pieces of specificity. Keep in mind if inline styles had a point, it automatically wins unless another selector has more points in its favor.
 
 // If all selectors are equal in points the last one created in the source file automatically wins. Yay for America in WW2!
+
+Universal selector has no specifity value.
+
+Rely more on specifity than on the order of selectors.
+Rely on order when using 3rd-party stylesheets - always put your author stylesheet last.
+
+links are considered elements they have the lowest specificity. Only becomes first with the addition of !important in the declaration.
+
+
+
+How CSS VALUES ARE PROCESSED FROM
+
+Declared value > 
+Cascaded Value > 
+Specified Value > 
+Computed Value > 
+Used Value > 
+Actual Value (rounds values based on the amount of pixels present.)
+
+Padding no declared of cascaded value. 
+There is a specificity value which is 0px(inital value). Does not compute any further because it is an absolute value.
+Root/Font-Size is browser default.
+
+Inheritence = inherits value of parent element. a P with in a .section.
+
+em uses parent's element's font size. 
+rem follows the root font-size.
+em differs slightly based on font and length. With font its value is multiplied by the parents px. While on length, it takes the value of the current element to multiply against.
+
+vh and vw are based on viewport percentage.
+
+Think Build Architect Mindset for
+
+Think about the layout of your webpage or web app before writing code.
+
+Build your layout in HTML and CSS with a consistent structure for naming classes.
+
+Create a logical architecture for your CSS with files and folders.
