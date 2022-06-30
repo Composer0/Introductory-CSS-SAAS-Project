@@ -1,2 +1,2 @@
-# Introductory-CSS-SAAS-Project
-Learning new CSS concepts and introducing myself to SAAS.
+# Introductory-CSS-Sass-Project
+Learning new CSS concepts and introducing myself to Sass.
