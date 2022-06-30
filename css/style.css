@@ -194,3 +194,13 @@ body {
     animation-timing-function: ease-out; 
     these are all combined into one property. */
 }
+
+footer {
+    color: rgb(160, 167, 175);
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+    bottom: 30px;
+    z-index: -1;
+}
