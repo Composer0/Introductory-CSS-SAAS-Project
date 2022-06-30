@@ -26,6 +26,8 @@ body {
 }
 
 .header {
+    position: relative;
+    /* setting this to relative allows the logo box's position of absolute become adjustable to the edge of the the header box. */
     height: 95vh;
     background-image: linear-gradient(
         to right bottom, 
@@ -40,3 +42,155 @@ body {
     /* TL TR BR BL */
 }
 
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px; /*width is automatically determined.*/
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%); /*makes it not longer in relationship with the parent element itself.*/
+    text-align: center;
+
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*hides shakeyness after the keyframes animation. Determines if back part of an element is visible or hidden to a user*/
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block; /*occupy entire width available. Creates line breaks before and after them*/
+    font-size:60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub {
+    display: block; /*occupy entire width available. Creates line breaks before and after them*/
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; how many times the animation occurs */
+    /* animation-timing-function: ease-in; */
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* for browser importance it is important to only animate 2 properties at a time. That is what the browser is optimized for. Particularly opacity and transform. */
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn:link, .btn:visited { /*link is a suedoclass.*/
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 100px;
+    display: inline-block; /*allows block element to work on this element as well.*/
+    transition: all .2s; /*helps set up transitions to be smoother.  This has to occur on the initial state.*/
+    position: relative; /*ensures that the btn-white::after does not cover up the entire text-box*/
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2); /*x y blur color*/
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+    font-size: 1.2rem;
+}
+
+.btn::after { /*this is treated like the child of the original button and is behind it*/
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes moveInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-animated {
+    animation: moveInButton .5s ease-out .75s;
+    animation-fill-mode: backwards; /*automatically apply animations of 0% before it even begins.*/
+    /* 
+    animation-name: moveInButton
+    animation-duration: 1s;
+    animation-delay: .75s;
+    animation-timing-function: ease-out; 
+    these are all combined into one property. */
+}
