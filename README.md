@@ -1,4 +1,4 @@
-# Introductory-Sass-Project
+# Sass-Foundations-Project
 
 https://composer0.github.io/Introductory-Sass-Project/
 
