@@ -1,0 +1,30 @@
+Syntastically Awesome Style Sheets Example statements View in Sass nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+Syntastically Awesome Style Sheets Example statements View in Sass nav li {
+  display: inline-block;
+}
+Syntastically Awesome Style Sheets Example statements View in Sass nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+View in CSS nav ul {
+  /*selector is this. everything else belongs to declaration block. the Property is something like margin while the declared value is the item that follows. Declaration in itself is the semi-colon.*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}/*# sourceMappingURL=basic practice example.css.map */

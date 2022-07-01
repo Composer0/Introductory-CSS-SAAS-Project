@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Creating Variables
+$color-primary: #f9ed69; //how to write a variable. Start with $ sign and then name it.
+$color-secondary: #F08a5d; //orange color
+$color-tertiary: #b83b5e; //pink
+// Creating Variables
+$color-text-dark: #777;
+$width-button: 150px;
+$color-text-light: #eee;
+
+
+nav {
+    margin: 30px;
+    background-color: $color-primary;
+
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+.navigation {
+    list-style: none;
+    float: left;
+
+    li {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 30px;
+        
+        &:first-child { //remember first child is essential the first item within the parent element.
+            margin: 0;
+         }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-text-dark;
+        }
+
+    }
+}
+
+.buttons {
+    float: right; //due to both elements floating, (buttons and navigation) the nav box collapses and loses its height to a height of 0px. The solution to this is a clearfix. Add the class to nav.
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+} // with clearfix class set we are now able to see the nav box properly outlining the floated items within its container. Alternatively to using clear fix we can do the following. **Refer to &::after in nav**
+
+.btn-main:link, 
+.btn-hot:link {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: $width-button;
+    color: $color-text-light;
+}
+
+.btn-main {
+    &:link {
+        background-color: $color-secondary;
+    }
+
+    &:hover {
+        background-color: darken($color-secondary, 100%);
+    }
+}
+
+.btn-hot {
+    &:link {
+        background-color: $color-tertiary;
+    }
+
+    &:hover {
+        background-color: lighten($color-tertiary, 15%);
+    }
+}

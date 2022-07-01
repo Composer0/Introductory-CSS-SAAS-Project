@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Creating Variables
+$color-primary: #f9ed69; //how to write a variable. Start with $ sign and then name it.
+$color-secondary: #F08a5d; //orange color
+$color-tertiary: #b83b5e; //pink
+// Creating Variables
+$color-text-dark: #333;
+$width-button: 150px;
+$color-text-light: #eee;
+
+// Mixin is a reusable piece of code. A larger variable with multiple lines of code.
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+} 
+
+@mixin style-text-link($col) { //$color in this line is establishing an argument. Later on when the mixin is called you can establish the color to be used within a parenthesis of the call.
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $col;
+}
+
+// How to create a Sass function declaration
+@function divide($a, $b) {
+    @return $a / $b;
+}
+
+// Placeholders and Extends. Use this instead of a mixin to reduce lines of code. Otherwise a mixin will reprint the information presented into multiple selectors. Extends should only be used if the themes are inherently related.
+%btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    width: $width-button;
+    @include style-text-link($color-text-light);
+}
+
+
+nav {
+    margin: divide(60, 2) * 1px;//demonstrating how to incorporate a function inside of the script.
+    background-color: $color-primary;
+
+    @include clearfix; //this call the mixin. @include to bring in @mixin. @mixin declares the variable. @include calls the variable.
+}
+
+.navigation {
+    list-style: none;
+    float: left;
+
+    li {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 30px;
+        
+        &:first-child { //remember first child is essential the first item within the parent element.
+            margin: 0;
+         }
+
+        a {
+            @include style-text-link($color-text-dark);
+
+        }
+
+    }
+}
+
+.buttons {
+    float: right; //due to both elements floating, (buttons and navigation) the nav box collapses and loses its height to a height of 0px. The solution to this is a clearfix. Add the class to nav.
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+} // with clearfix class set we are now able to see the nav box properly outlining the floated items within its container. Alternatively to using clear fix we can do the following. **Refer to &::after in nav**
+
+
+.btn-main {
+    &:link {
+        @extend %btn-placeholder;
+        background-color: $color-secondary;
+    }
+
+    &:hover {
+        background-color: darken($color-secondary, 15%);
+    }
+}
+
+.btn-hot {
+    &:link {
+        @extend %btn-placeholder;
+        background-color: $color-tertiary;
+    }
+
+    &:hover {
+        background-color: lighten($color-tertiary, 15%);
+    }
+}
