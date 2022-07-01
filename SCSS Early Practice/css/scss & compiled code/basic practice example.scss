@@ -1,0 +1,48 @@
+Syntastically Awesome Style Sheets
+// CSS Object Model CSSOM.  Works with DOM to create Render Tree. Website rendering the visual formatting model. - > Final rendered website.
+Example statements
+
+View in Sass
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {display: inline-block;}
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none
+    }
+}
+
+View in CSS
+
+nav ul {/*selector is this. everything else belongs to declaration block. the Property is something like margin while the declared value is the item that follows. Declaration in itself is the semi-colon.*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+// Author declartion and user declartion are a thing. Anything I write is author. User when they are able to modify the page.
+
+// Cascade looks at importance > specificity > source order.
+// Author Declaration only trumps User when !important is used. Otherwise User wins unless default browser takes precidence.
+
+// Specificity includes: inline styles, IDs, Classes,Peudo-classes,attribute, and Elements,pseudo-elements. When a property's declared value is created its precidence is determined by how many points it is earning by having one of each of the stated pieces of specificity. Keep in mind if inline styles had a point, it automatically wins unless another selector has more points in its favor.
+
+// If all selectors are equal in points the last one created in the source file automatically wins. Yay for America in WW2!

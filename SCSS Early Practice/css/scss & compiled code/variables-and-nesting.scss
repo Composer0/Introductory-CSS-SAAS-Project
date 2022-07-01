@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Creating Variables
+$color-primary: #f9ed69; //how to write a variable. Start with $ sign and then name it.
+$color-secondary: #F08a5d; //orange color
+$color-tertiary: #b83b5e; //pink
+// Creating Variables
+
+nav {
+    margin: 30px;
+    background-color: $color-primary;
+}
+
+.naviagation {
+    list-style: none;
+
+    li {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+}
