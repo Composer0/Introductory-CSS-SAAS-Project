@@ -7,3 +7,21 @@
     padding: 25rem 0;
     margin-top: -20vh;
 }
+
+.section-features {
+    padding: 20rem 0;
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, .8),
+        rgba($color-primary-dark, .8)),
+        url(../img/nat-4.jpg);
+        background-size: cover;
+    transform:skewY(-7deg); //the entirety of the box and its contents will be skewed at this level.
+    margin-top: -10rem;
+
+    & > * {// This is known as the direct children feature the. The '>' followed by the '*'. This will affect everything within the parent element. Individual can also be done as well.
+        transform: skewY(7deg);
+    }
+}
