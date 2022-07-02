@@ -56,6 +56,8 @@
         background-blend-mode: overlay;//this allows multiple items in the background-image to be blended together! And it works on microsoft edge!
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100% );//webkit should typically come first.
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100% );
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
@@ -83,7 +85,7 @@
     &__heading-span {
         padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
-        box-decoration-break: clone; //
+        box-decoration-break: clone; //this is used to create an effect of multiple boxes when the text wraps around to the next line.
 
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -120,7 +122,34 @@
             }
         }
 
-
     }
 
+// Front Side Card Styling 
+
+//Back Side Card Styling
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
 }
