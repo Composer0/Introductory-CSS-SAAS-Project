@@ -1,0 +1,65 @@
+.card {
+    // define the perspective to help create the flip element. Establishes a 3-dimensional effect.
+    perspective: 150rem; //the lower the value the more dramatic the effect. The higher the value the more natural it feels.
+    -moz-perspective: 150rem; //2nd line lets perspective work in mozilla firefox.
+    position: relative;
+    // perspective is lost when position is set to absolute... to correct this height must be established within the parent element.
+    height: 50rem;
+
+    &__side{   
+        color: #fff;
+        font-size: 2rem;
+
+        height: 50rem;
+        transition: all .8s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden; //hides content when the back of an element is shown.
+        border-radius: 3px;
+        box-shadow: $box-shadow;
+
+        &--front {
+            background-color: green;
+
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark)
+            }
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark)
+            }
+        }
+
+
+
+
+
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+ 
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+}
