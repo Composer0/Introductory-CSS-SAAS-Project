@@ -1,0 +1,41 @@
+.composition {
+    position: relative;
+
+    &__photo{
+        width: 60%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black ,0.4);
+        border-radius: 0; //originally set to 2px but green outline displayed as very rounded. Would not stop until set to 0 :'(.
+        position: absolute;
+        transition: all .2s, border-radius 1ms; //transition must be established before a transform can be smooth. Otherwise all you will get is a snappy effect.
+        outline-offset: 2rem; //puts space between the outline border on hover!
+        z-index: 0;
+
+
+        &--p1 {
+            left: 0;
+            top: -1rem;
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem;      
+        }
+        
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.10) translateY(-5px);
+            box-shadow: 0 2.5rem 4rem rgba($color-black ,0.5);
+            z-index: 1;
+        }
+    }
+
+    &:hover &__photo:not(:hover) {//:not can also effect properties that are not be interacted with. It is not used simply to effect a specific block, but it can be used for pseudo classes.
+        transform: scale(.95);
+    }
+
+}
