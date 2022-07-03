@@ -3,7 +3,7 @@
     margin: 0 auto;
     margin-bottom: 5rem;
     box-shadow: (0 3rem 6rem $color-black .1);
-    background-color: $color-white;
+    background-color: rgba($color-white, .6);
     border-radius: 3px;
     padding: 6rem;
     padding-left: 9rem;
@@ -62,3 +62,4 @@
 
     }
 }
+
