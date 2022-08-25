@@ -38,5 +38,18 @@
     &__text {
         font-size: 1.4rem;
         margin-bottom: 4rem;
+
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem;
+        -moz-column-rule: 1px solid $color-grey-text;
+        column-count: 2;
+        //this breaks the text into multiple columns without multiple divs or or p.
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-text; //Creates a thin line of division between columns of text.
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto; //makes it so that all lines are not evenly spaced out for natural reading. auto can be used and will detect syllables. Manual will remove hyphens.
     }
+    //this whole text sections is really cool to me in how it works. Glad I have been able to learn this.
 }
