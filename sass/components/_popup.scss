@@ -7,6 +7,8 @@
     background-color: rgba($color-black, .8);
     z-index: 9999;
 
+    display: none;
+
     &__content {
         @include center-horizontal-vertical;
         width: 75%;
@@ -42,6 +44,7 @@
         -moz-column-count: 2;
         -moz-column-gap: 4rem;
         -moz-column-rule: 1px solid $color-grey-text;
+
         column-count: 2;
         //this breaks the text into multiple columns without multiple divs or or p.
         column-gap: 4rem;
