@@ -8,6 +8,19 @@
 
 html {
     font-size: 62.5%; //defines what 1rem is equal to.
+
+    @include respond(phone) {
+        font-size: 30%;
+    }
+    @include respond(tabletPortrait) {
+        font-size: 50%;
+    }
+    @include respond(tabletLandscape) {
+        font-size: 56.25%;
+    }
+    @include respond(bigScreen) {
+        font-size: 75%;
+    }
 }
 
 body {
