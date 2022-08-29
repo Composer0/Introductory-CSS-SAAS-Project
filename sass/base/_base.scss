@@ -25,4 +25,9 @@ html {
 
 body {
     box-sizing: Border-box;
+    padding: 3rem;
+
+    @include respond(tabletPortrait) {
+        padding: 0;
+    }
 }

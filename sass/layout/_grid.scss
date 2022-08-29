@@ -6,6 +6,10 @@
     &:not(:last-child) { //not states that everything is being selected except for the argument, in that case the last-child.
         margin-bottom: $gutter-vertical;
 
+        @include respond(phone) {
+            margin-bottom: $gutter-vertical-small;
+        }
+
     }
 
     @include clearfix;
@@ -14,7 +18,16 @@
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tabletPortrait) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
             
+        }
+
+        @include respond(tabletPortrait) {
+            width: 100% !important;
         }
     }//this... class^="col" does not need to have the other columns nested within it.
 
