@@ -2,6 +2,11 @@
     background-color: $color-grey-dark-3;
     padding: 10rem 0;
     font-size: 1.4rem;
+    color: $color-grey-light-1;
+
+    @include respond (tabletPortrait) {
+        padding: 8rem 0;
+    }
 
     &__logo-box {
         text-align: center;
@@ -19,6 +24,10 @@
         padding: 2rem;
         display: inline-block;
 
+        @include respond(tabletPortrait) {
+            width: 100%;
+            text-align: center
+        }
     }
 
     &__list {
@@ -53,7 +62,12 @@
 
     &__copyright {
         border-top: 1px solid $color-grey-dark;
-        padding-top: 2rem
+        padding-top: 2rem;
+
+        @include respond(tabletPortrait) {
+            width: 100%;
+            float: none;
+        }
     }
 
 }

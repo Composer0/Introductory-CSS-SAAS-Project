@@ -6,10 +6,14 @@
     &:not(:last-child) { //not states that everything is being selected except for the argument, in that case the last-child.
         margin-bottom: $gutter-vertical;
 
-        @include respond(phone) {
+        @include respond(tabletPortrait) {
             margin-bottom: $gutter-vertical-small;
         }
 
+    }
+
+    @include respond(tabletPortrait) {
+        max-width: 50rem;
     }
 
     @include clearfix;
