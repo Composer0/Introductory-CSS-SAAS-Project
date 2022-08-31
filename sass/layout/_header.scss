@@ -1,6 +1,6 @@
 .header {
     position: relative;
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, .8),
@@ -13,8 +13,18 @@
 
     // Resolution based Media Query... dpi=dots per inch. The one below targets higher resolution screens.
 
+    // Feature Query
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+
     // comma indicates or. If this event occurs or this one.
-    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), 
+    (-webkit-min-devoce-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom, 
             rgba($color-primary-light, .8),

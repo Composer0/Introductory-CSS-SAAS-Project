@@ -11,7 +11,16 @@
     visibility: hidden; //present but hidden. Make visble using anchor and target.
     transition: all .3s;
 
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
 
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+    // This is used to apply graceful degredation in order to have some features used on devices and for devices that don't have access will render the default.
 
     &__content {
         @include center-horizontal-vertical;
