@@ -16,6 +16,12 @@
         display: block;
         transition: all .3s;
 
+        @include respond(tabletPortrait) {
+
+            border-style: 3px solid;
+            border-color: rgba($color-grey-dark, .8);
+        }
+
 
         
         &:focus {
@@ -38,6 +44,12 @@
     &__radio-group {
         width: 49%;
         display: inline-block;
+
+        @include respond(tabletPortrait) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        
 
     }
 

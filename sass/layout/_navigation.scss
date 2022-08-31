@@ -41,8 +41,8 @@
         }
 
         @include respond(phone) {
-            top: 3.5rem;
-            right: 3.5rem;
+            top: 4.5rem;
+            right: 4.5rem;
         }
 
     }
@@ -52,7 +52,7 @@
         // width: 100%;
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         
         z-index: 1500;
         opacity: 0;
